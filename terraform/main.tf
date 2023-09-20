@@ -71,7 +71,7 @@ data "aws_iam_policy" "aws_kinesis_access" {
 ##########################################################################
 data "archive_file" "aws_lambda" {
   type        = "zip"
-  source_file = "${path.module}/scripts/lambda-function/GeneratePageviewEventsLambda.py.py" 
+  source_file = "${path.module}/scripts/lambda-function/GeneratePageviewEventsLambda.py" 
   output_path = "${path.module}/scripts/lambda-function/GeneratePageviewEventsLambda.zip"
 }
 
