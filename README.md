@@ -1,5 +1,5 @@
 # Serverless event-driven streaming data pipeline on AWS
-# COMING SOON!!! 
+
 ## Context
 The business problem that this project aims to solve is how to efficiently and effectively process a high volume of page views data in real-time, derive meaningful insights from the data, and use these insights to improve website performance and user experience.
 

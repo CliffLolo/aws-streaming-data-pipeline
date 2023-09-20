@@ -4,7 +4,6 @@ The generatePageview function creates a JSON-encoded pageview event with a rando
 a channel, and a timestamp. The lambda_handler function sends the events to the Kinesis Data Stream by calling the 
 put_record method of the Kinesis client. The PartitionKey parameter is set to the user ID to ensure that events 
 are evenly distributed across the shards of the stream.
-
 """
 
 import json
@@ -13,10 +12,11 @@ import time
 import boto3
 import math
 
+# CONFIG
 userSeedCount = 10000
 itemSeedCount = 1000
 purchaseGenEveryMS = 100
-pageviewMultiplier = 75
+pageviewMultiplier = 75  # Translates to 75x purchases, currently 750/sec or 65M/day
 channels = ["organic search", "paid search", "referral", "social", "display"]
 categories = ["widgets", "gadgets", "doodads", "clearance"]
 
