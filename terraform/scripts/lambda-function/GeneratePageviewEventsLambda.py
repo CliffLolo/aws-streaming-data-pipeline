@@ -11,6 +11,7 @@ import random
 import time
 import boto3
 import math
+import os
 
 # CONFIG
 userSeedCount = 10000
@@ -22,7 +23,7 @@ categories = ["widgets", "gadgets", "doodads", "clearance"]
 
 # Initialize Kinesis client and stream name
 kinesis = boto3.client('kinesis')
-kinesis_stream_name = 'PageviewDataStream'
+kinesis_stream_name = os.environ['data_stream_name']
 
 
 def generatePageview(viewer_id, target_id, page_type):
