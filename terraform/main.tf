@@ -92,7 +92,7 @@ resource "aws_lambda_function" "aws_lambda" {
 }
 
 ###########################################################################
-### Kinesis datacstream creation ###
+### Kinesis datastream creation ###
 ###########################################################################
 
 resource "aws_kinesis_stream" "kinesis_stream" {
