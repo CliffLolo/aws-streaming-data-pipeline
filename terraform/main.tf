@@ -88,6 +88,12 @@ resource "aws_lambda_function" "aws_lambda" {
   handler       = "awslambda.lambda_handler"
   runtime       = "python3.11"
   timeout       = 180
+  environment {
+    variables = {
+      data_stream_name = aws_kinesis_stream.kinesis_stream.name
+    }
+
+  }
   tags = var.additional_tags
 }
 
