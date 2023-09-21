@@ -90,3 +90,24 @@ resource "aws_lambda_function" "aws_lambda" {
   timeout       = 180
   tags = var.additional_tags
 }
+
+###########################################################################
+### Kinesis datacstream creation ###
+###########################################################################
+
+resource "aws_kinesis_stream" "kinesis_stream" {
+  name             = "${var.aws_resource_prefix}-aws-kinesis-stream"
+  shard_count      = 1
+  retention_period = 24
+
+  shard_level_metrics = [
+    "IncomingBytes",
+    "OutgoingBytes",
+  ]
+
+  stream_mode_details {
+    stream_mode = "PROVISIONED"
+  }
+
+  tags = var.additional_tags
+}
