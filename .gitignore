@@ -1,0 +1,4 @@
+aws-streaming-project-env/
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/scripts/lambda-function/GeneratePageviewEventsLambda.zip
